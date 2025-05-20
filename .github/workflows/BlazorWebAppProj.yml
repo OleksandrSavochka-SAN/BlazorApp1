@@ -34,9 +34,9 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         action: upload
         deployment_environment: ${{env.DEPLOYMENT_ENVIRONMENT}}
-        app_location: ${{ env.APP_DIRECTORY }}
+        app_location: '/BlazorApp1'
         api_location: ${{ env.API_DIRECTORY }}
-        output_location: ${{ env.OUTPUT }}
+        output_location: 'BlazorApp1/wwwroot'
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     name: Close Pull Request Job
